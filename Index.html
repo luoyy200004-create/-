@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学习笔记整理助手</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>学习笔记整理助手</h1>
+            <p class="description">
+                帮助你整理课程笔记，生成摘要和知识点。请先输入阿里云百炼 API Key，然后粘贴你的笔记内容。
+            </p>
+        </header>
+
+        <section class="api-section">
+            <div class="input-group">
+                <label for="api-key">阿里云百炼 API Key</label>
+                <input type="password" id="api-key" placeholder="请输入你的 API Key">
+                <button id="save-key-btn" class="btn btn-secondary">保存/更新 Key</button>
+            </div>
+        </section>
+
+        <section class="input-section">
+            <div class="input-group">
+                <label for="user-input">课程笔记/修改建议</label>
+                <textarea id="user-input" placeholder="请粘贴你的课程笔记，或输入修改建议..."></textarea>
+            </div>
+            <div class="button-group">
+                <button id="send-btn" class="btn btn-primary">生成摘要</button>
+                <button id="clear-btn" class="btn btn-danger">清空对话</button>
+            </div>
+        </section>
+
+        <section class="status-section">
+            <div id="loading" class="status loading">
+                <span class="spinner"></span>
+                <span>正在生成中...</span>
+            </div>
+            <div id="error" class="status error">
+                <span class="error-icon">✕</span>
+                <span id="error-message">发生错误</span>
+            </div>
+        </section>
+
+        <section class="output-section">
+            <h2>整理结果</h2>
+            <div id="output-content" class="output-content">
+                <div class="empty-state">
+                    <p>等待输入笔记内容...</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
